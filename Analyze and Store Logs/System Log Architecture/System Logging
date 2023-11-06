@@ -1,0 +1,22 @@
+The systemd-journald and rsyslog services handle the syslog-based messaged in RHEL 9.
+
+systemd-journald is the key component of RHEL Logging. It handles:
+	• System Kernel
+	• Early portions of booting the OS
+	• STDOUT and STDERR from daemons
+
+rsyslog service
+	rsyslog service sorts and organizes messages into log files in the /var/log directory
+	
+	The /var/log directory contains log files from most services on the system.
+	
+		/var/log/messages - most syslog messages. Exceptions include: authentication, email processing, scheduled job execution, purely debugging messages
+		
+		/var/log/secure - syslog messages about security and authn event
+		
+		/var/log/maillog - syslog messages about the mail server
+		
+		/var/log/cron - syslog message about scheduled job execution
+		
+		/var/log/boot.log - nonsyslog console messages about startup
+

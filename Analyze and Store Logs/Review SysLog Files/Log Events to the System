@@ -1,0 +1,38 @@
+Codes:
+	• Facility (ex. kernel, user, mail, printer, etc.)
+		○ 0-23
+	• Priorities
+		○ 0 - system is unusable
+		○ 7 - debug message
+
+rsyslog service: handling messages
+	message's facility (origin) and priority determine how rsys routes the message
+	
+	The routing configuration can be modified via:
+		/etc/rsyslog.conf
+		/etc/rsyslog.d/*.conf
+		
+		Example: etc/rsyslog.d/auth.conf will rout messages from the authpriv facility to the /var/log/secure file:
+		
+			authpriv.*                /var/log/secure
+			
+	One message can be routed to multiple logs, if the rule matches multiple logs. Alternaticely, the none keywork can route no messages for the indicated facility to the given log file
+	
+	Example: Everybody gets emergency messages. /etc/rsyslog.d/emergency.conf
+	
+		.emerg                           :omusrmsg:
+		
+
+Log File Rotation
+
+	The logrotate command allows you to manually rotate log files.
+	
+	Usually, log files rote every few weeks depnding on the configuration used by the scheduled job that runs the logrotate command daily.
+	
+Analyze a SysLog Entry
+
+	timestamp hostname_that_sent_the_message program[Process ID]: Message
+	
+Send Syslog Messages Manually
+
+Logger allows you to send a syslog message to the rsyslog service with options to specify priorty, etc.
