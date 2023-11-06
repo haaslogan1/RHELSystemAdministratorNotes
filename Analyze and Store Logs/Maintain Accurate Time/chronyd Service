@@ -1,0 +1,21 @@
+Why chronyd?
+	chronyd is used to sync with the NTP servers. If there is no network connection, chronyd attempts to calculate its clock drift and stores it in the driftfile value in the /etc/chrony.conf file
+	
+How do you monitor the quality of the time stored on the NTP server?
+	stratum!
+	
+	stratum calculates the amt of hops between a machine and a high performance reference clock
+	
+		localhost (stratum=2) -> NTP (stratum-1) -> high-performance clock (startum=0)
+		
+	
+Configuring a network of time-interested machines
+	Assign servers (local NTP host - 1 stratum) and peers (local NTP host + 0 stratum) in the /etc/chrony.conf file
+	
+		Example add the logan.com NTP server and the iburst option for a more accurate initial clock sync
+			server logan.com iburst
+			
+Verify that the localhost is not having issues with the NTP Server
+	Run chronyc sources -v
+	
+

@@ -1,0 +1,33 @@
+Easiest Method to Persist Journal
+
+	Change the location of the journal to a persistent location (rather than the /run/log directory) bu modifying the value in /etc/systemd/journald.conf)
+	
+		Storage parameter is what you would change.
+		Values
+			§ Persistent - store journal in /var/log/journal directory
+			§ volatile - store in /run/log/journal
+			§ auto (default) - only store in /var/log/journal directory if the file already exists
+			§ none - drop all logs after passing to rsyslog
+		
+		
+Obvious Persistent Storage Drawback
+
+	There are a lot of messages which can take up space!
+
+	By default, the journal has a built-in rotation mechanism that triggers monthly. Plus, the system does not allow journals to be larger than 10% of the file system or leaving <15% free
+	
+		Modifiable in /etc/systemd/journald.conf
+		
+Persistent System Journals
+
+Configure by only creating /var/log/journal directory and restarting the systemd-journald service
+
+	Then, the journals will be created as long hex directories that you can read with journalctl
+	
+	Example: Distinguish boots
+	
+		journalctl --list-boots
+		
+		## Choose boot 2
+		
+		journalctl -b 2

@@ -1,0 +1,24 @@
+Journal
+	structured, indexed binary file that the systemd-journald service writes logging data into
+	
+	The journal tells what we see in the /var/log/* logs + facility + priority
+	
+	Note: the journal is stored in the /run/log directory which is lost each time the system is shut down. If needed, change the location to a persistent directory.
+	
+journalctl
+
+	journalctl displays all log messages (for the root user)
+	
+	Important: limit journal searches to filter for relevant output.
+	
+	Example: List journal entries with the err priority or higher.
+		journalctl -p err
+		
+	Example: List journal entries for the sshd service
+		journalctl -u sshd.service
+		
+	Example: :List journal entry from an issue that occurred on November 5, 2023 at 10 PM
+		journalctl --since "2023-11-05 21:59" --until "2023-11-05 22:01"
+		
+	Example: Use fields to filter for specific events
+journalctl _SYSTEMD_UNTI=sshd.service _PID=x 

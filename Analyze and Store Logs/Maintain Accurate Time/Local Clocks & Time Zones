@@ -1,0 +1,30 @@
+Sunday, November 5, 2023
+11:36 PM
+
+Having the correct time is critical for troubleshooting & some applications or services
+
+How do Linux machines keep the correct time?
+
+	NTP! Network Time Protocol. There are different public NTP services that a machine may use.
+	
+		You can disable NTP synchronization with:
+			timedatectl set-ntp false
+	
+	Alternativelty, sync with a hardware clock.
+	
+	
+	
+Find the time thatyour machine thinks is accurate
+	timedatectl  shows what you'll need to check.
+	
+Don't know which timezone you are in?
+	yikes.
+	
+	Use the tzselect command to troubleshoot where you are currently located 
+	
+Change the timezone
+	Simply run timedatectl set-timezone X
+	
+Set the current time
+	timedatectl set-time TIME
+
