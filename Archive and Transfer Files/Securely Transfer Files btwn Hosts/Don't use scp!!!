@@ -1,0 +1,4 @@
+The downfall of the famous scp command
+	scp was not built with security considerations
+	
+	There are known code injection issues that an attacker could execute arbitary commands on the remote server

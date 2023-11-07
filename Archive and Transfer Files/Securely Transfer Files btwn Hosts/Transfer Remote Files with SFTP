@@ -1,0 +1,28 @@
+sftp: interactive Version of scp
+
+	sftp is basically OpenSSH's implementation of an interactive data transfer tool
+	
+	sftp - secure file transfer protocol
+	
+		just a guess, but seems like what it does
+		
+	Just like SSHing into a remote host! 
+	
+Browsing through a remote host with sftp
+
+	cd, mkdir, ls, pwd, … are all the same as if you used SSH to access the remote host
+	
+		Throw an 'l' in front to specify localhost
+		Example
+			lpwd
+			
+	
+	New options
+		put - put a file from your localhost on the remote host
+		
+		get - get a file from the remote host to the local host
+		
+		
+		
+		
+

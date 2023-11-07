@@ -1,0 +1,20 @@
+Do I need to specify an alg?
+	Again (just like when listing archive contents), no need to specify the alg since it is stored in the archive's header.
+	
+	If you specify an incorrect alg, tar will laugh, send an error, and exist with exit code 1. Like this: Example
+		tar -xzf /root/etcbackup.tar.xz
+		gzip: stdin: not in gzip format
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+
+Why would you want to uncompress an archive but not extract the files?
+	
+	Not sure.
+	
+	Regardless, you can with the following alg-specific commands:
+		gunzip
+		bunzip2
+		unxz
+
+Verify size of uncompressed files before uncompressing
+	The gzip -l and xz -l can tell you the compressed v. uncompressed sizes

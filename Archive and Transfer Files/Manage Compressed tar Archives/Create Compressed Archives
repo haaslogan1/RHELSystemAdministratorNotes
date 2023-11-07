@@ -1,0 +1,19 @@
+Tradeoffs between Compression Algs
+	gzip: 
+		earlier 
+		fastest
+		widely available
+	bzip2:
+		smaller archives
+		Not as widely available as gzip
+	xz:
+		newer
+		Best compression ratio
+		
+Example: Create a compressed archive of the /etc directory
+	tar -czf /root/etcbackup.tar.gz /etc
+	
+Listing a Compressed Archive
+
+	There is no need to specify compression alg because that is stored in the archive's header
+

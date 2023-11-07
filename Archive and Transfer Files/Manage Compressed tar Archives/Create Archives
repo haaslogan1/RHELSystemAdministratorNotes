@@ -1,0 +1,48 @@
+Different types of Archives
+	Archives are a single fle that contain multiple files. They can contain:
+		1. Regular files
+		2. Device files
+	
+	When an archive has a regular file, it is basically the same as a zip file.
+	
+Archive File Use Cases
+	1. Create a backup
+	2. Share files within a network when rsync may be too complicated
+	3. Compression is not always required for an archive to be an archive!
+
+tar: probably the best
+	tar is the common archive tool. Advantage:
+		It contains file metadata + index to extract specific files rather than extracting all files (if desired)
+		
+		List files within, without extracting
+		
+		Extracts files from compressed on uncompressed archives
+		
+	tar Actions
+		--create
+		--list
+		--extract
+		
+		Kind of obvious what those actions do.
+		
+	Algorithms
+	
+		--auto-compress: use the archive's suffix to determine the best alg to use
+		--gzip
+		--bzip2
+		--xz
+		
+	Permission Requirements
+	
+		Must be able to read a file to make an archive with it via tar
+		
+	Example: create a tar file with some logs
+		cd /var/logs/secure
+		tar -cf log1 log2 log3
+		
+	Example: take out the ablsolute path!!
+		tar -cf /root/etc-backup.tar /etc
+		tar: removing leading '/' from member names
+		
+	Example: List archive contents
+		tar -tf mytar.tar

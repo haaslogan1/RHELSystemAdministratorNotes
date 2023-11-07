@@ -1,0 +1,14 @@
+rsync: remote Sync
+	Efficiently syncs file systems by only replacing the differences between files
+	
+		This is very advantageous when syncing large file systems
+		
+	IMPORTANT: run with the dry run option first (-r) to ensure no critical files are replaced.
+	
+WebSphere Example - Horrible idea: normally, you can't sync the properties directory. Now, you can:
+
+	rsync uid@host:/opt/IBM/WebSphere905/AppServer/profiles/DMGR/properties/ /opt/IBM/WebSphere905/AppServer/profiles/custom01/properties/
+	
+	
+	
+
