@@ -1,0 +1,66 @@
+Is there a daemon to help with tuning?
+
+	Of course there is!
+	
+	The tund daemon uses tuning profiles that reflect use cases (workload requirements)
+	
+How do I set up static tuning?
+
+	You configure kernel params in profiles that the tuned daemon applies at runtime
+	
+	Important: static tuning sets kernel params based only on expectations. There are not runtime changes if those kernel params aren't equipped to handle reality.
+	
+How is Dynamic Tuning Different?
+
+	Dynamic Tuning starts with the settings in your tuning profile, but constant adjusts to meet the current workload.
+	
+How does dynamic tuning work?
+
+	You need to adjust the monitor (tuning modules) and tuning plug-ins. The tuned daemon uses them to monitor and adjusts params as needed.
+	
+	
+	Monitor plug-ins analyze the entire system. Tuning plug-ins use the analytics from the monitor plug-ins for dynamic tuning of subsystems.
+		Monitor plug-ins -> system resource data -> Tuning plug-ins -> improved sys efficiency
+	
+	Monitor plug-ins
+		1. disk
+			i. Monitors disk load based on # of I/O operations for each disk device
+		2. net
+			i. Monitors # of transferred packets per network card
+		3. load
+			i. Monitors CPU load per CPU
+	
+	Tuning plug-ins
+		1. disk
+			i. sets disk params.
+				1) Examples
+					a) disk scheduler
+					b) spin-down timeout
+					c) advanced power management
+		2. net
+			i. configures:
+				1) interface speed
+				2) WoL (wake-on-LAN) functionality
+		3. cpu
+			i. sets CPU params
+				1) Example
+					a) CPU governor of latency
+
+Is Dynamic Tuning enabled by default?
+
+	No.
+	
+How do I enable dynamic tuning?
+
+	Enable it in this file: /etc/tuned/tuned-main.conf
+	
+	Params to look for:
+		dynamic_tuning
+			1 =  enabled
+			0 = not enabled
+			
+		update_interval
+			time (in seconds) between the tuned daemon monitoring and tuning the system
+			
+	
+

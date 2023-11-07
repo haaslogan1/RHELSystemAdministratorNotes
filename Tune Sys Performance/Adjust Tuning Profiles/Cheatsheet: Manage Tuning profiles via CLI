@@ -1,0 +1,23 @@
+How do I check which profile I have actively running?
+
+	tuned-adm active
+	
+How do I check available profiles?
+
+	tuned-adm list
+	
+How do I get more info about a profile?
+	
+	tuned-adm profile_info profile_name
+	
+How do I switch profiles for my system?
+	
+	tuned-adm profile PROFILE_NAME
+
+If you're indecisive, you can ask the system for its opinion on which profile to use
+
+	tuned-adm recommend
+	
+Of course, you can turn off tuning
+
+	tuned-adm off

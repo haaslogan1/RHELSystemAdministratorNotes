@@ -1,0 +1,33 @@
+How do I get started with tuned?
+
+	The package is ready to be installed in even the most minimal RHEL installations
+	
+	Just do the following
+	
+		dnf install tuned
+		
+		systemctl enable --now tuned
+		
+Tell me about tuned profiles
+
+	They are all essentially somewhere on the long spectrum between performance and power-saving
+	
+	For my test systems, it is probably best to tune the system for power ssaving:
+		tudned profile = powersave
+		
+Tuned profile configuration
+
+	All profile configuration files are located here:
+		/etc/tuned/
+		/usr/lib/tuned/
+		
+		If two profiles exists with the same name, the one in /etc/tuned takes precedence.
+		
+	[main]
+		include sets the tuned profile
+		
+	[sysctl]
+		sets those kernel params we were talking about.
+		
+
+
