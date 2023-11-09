@@ -1,0 +1,53 @@
+Tell me about CPU saturation
+
+	workstations should be built to handle the user's activity. Not much more, definitely not less.
+	
+	However, some servers handle thousands of requests per second (think amazon.com)
+	
+		This can result in CPU Saturation
+		
+		All systems under CPU load encounter this scenario:
+			more process threads are needed than what the system CPUs are available for.
+			
+			Hence: scheduling!!
+			
+How does Linux  handle scheduling?
+	
+	time-slicing, AKA multitasking
+	
+	The OS rapidly switches between process threads on each available CPU core
+	
+		So, when we run ps -ef, we see a bunch of processes, but they are not actually all running at the same time.
+		
+Process Priorities
+
+	Priority sets the importance of each process.
+	
+	Linux uses scheduling policies to determine the queue for processes that need CPU processing time
+	
+		Real-time scheduling policies uses priorities and queues
+		
+		non-real-time (normal) scheduling policies use the CFS (completely fair scheduler)
+		
+			uses a binary search tree full of processes waiting on CPU time
+			
+				uses SCHED_NORMAL (priority of 0) or SCHED_OTHER policies
+			
+				binary tree simply sets a queue based on which processes have had the most CPU time up until now
+				
+How can I impact the CFS?
+	
+	root can increase or descrease the nice value!
+	
+		nice sets a process (and all its children processes) from -20 (high priority) to 19 (low priority) with the default at 0
+		
+	nice processes are low priority because they wait in line, not nice processes are high priority because they skip the line. Hence, -20 is not nice and 19 is nice
+	
+What permissions are required to impact nice score?
+
+	root and privileged users can increase and decrease nice scores
+	
+	unpriviliged users can make their processes nicer, but they can't even make other processes nicer
+	
+
+

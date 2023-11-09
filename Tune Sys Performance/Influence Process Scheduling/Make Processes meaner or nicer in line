@@ -1,0 +1,48 @@
+How does a process have a static nice value set between reboots?
+
+	Just like how a child process inherits the parent process' nice score, parent processes (started from the CLI) inherit the nice value from the shell process.
+	
+	Example: default
+	
+		sleep 60 &
+			[1] 2667
+			
+		ps -o pid,comm,nice 2667
+			 PID COMMAND          NI
+ 2667 sleep                   0
+			
+		Nice is set to zero which is the default.
+		
+How do I set the nice score when running the process?
+
+	example: set nice score to 10:
+	
+		nice sleep 60 &
+		
+	Example: set nice score to 15
+	
+		root@sample:~# nice -n 15 /opt/IBM/WebSphere905/AppServer/bin/startNode.sh &
+		[1] 2709
+		root@sample:~#  ps -o pid,comm,nice 2709
+		    PID COMMAND          NI
+		   2709 startNode.sh     15
+	
+How do I change the nice score for a running program?
+	
+	renice
+	
+	Example: set nice score for a running process
+	
+		root@sample:~# nice -n 15 /opt/IBM/WebSphere905/AppServer/bin/startNode.sh &
+		[1] 2709
+		root@sample:~#  ps -o pid,comm,nice 2709
+		    PID COMMAND          NI
+		   2709 startNode.sh     15
+		root@sample:~# renice -n 20 2709
+		root@sample:~#  ps -o pid,comm,nice 2709
+		    PID COMMAND          NI
+		   2709 startNode.sh     20
+		
+		
+		
+
