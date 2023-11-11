@@ -1,0 +1,27 @@
+Where are SELinux contexts stored and modified?
+
+	/etc/selinux/targeted/contexts/files
+	
+	Example: what's in the directory?
+	
+		[logan@logan ~]$ ls -ltr /etc/selinux/targeted/contexts/files/
+		total x
+		….
+		
+What about when you create a new file or directory?
+
+	Context inheritance!
+	
+	If a file does not have a specific policy file, it inherits its parents.
+	
+How about when I copy a file to a new location?
+
+	By default, the file inherits its parent's context.
+	
+	However, this can be avoided with the --preserve=context option
+	
+	What if I move a file instead of copying a file?
+	
+		All good! SELinux preserves the context by default :) 
+		
+

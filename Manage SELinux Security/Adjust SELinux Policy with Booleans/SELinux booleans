@@ -1,0 +1,33 @@
+What do SELinux booleans do?
+
+	They enable or disable optional behavior specified in the policy file.
+	
+How do I check and set SELinuc booleans?
+
+	getsebool -a
+	
+		Lists all SELinux booleans
+		
+	setsebool
+		
+		Sets a specific boolean
+		
+		Use -P for a persistent change
+		
+Please show me an example
+
+	The httpd service has an option to allow httpd to access the home directories so users can view them on their browser
+	
+	We can run the following command to check whether this option is enabled:
+		getsebool httpd_enable_homedirs
+		
+	We can set the option via:
+		setsebool httpd_enable_homedirs on
+		
+	We can check whether it is permanently on (or until the next reboot) via:
+		semanage boolean -l -C
+		
+	We can set this permanently via:
+		setsebool -P httpd_enable_homedirs on
+
+

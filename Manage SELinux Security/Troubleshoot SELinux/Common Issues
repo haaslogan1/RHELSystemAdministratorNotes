@@ -1,0 +1,7 @@
+What is the most common SELinux issue?
+	
+	Incorrect context on new, copied, or modified files no longer allows privileges to the user
+	
+Is it difficult to create boolean SELinux features?
+
+	Typically, this requires addditional steps outside SELinux

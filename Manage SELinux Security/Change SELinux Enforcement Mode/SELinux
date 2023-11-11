@@ -1,0 +1,39 @@
+Why SELinux?
+
+	The prupose of SELink is to set policies on the usage of files. Permissions lready handles RWX
+	
+		Best part: if you don't set up a minimal, you are even more secure because there are very few actions that a malicious user could possibly execute
+		
+		confined = policy set
+		unconfined = no policy set
+		
+	owner, group, and world permissions (AKA Discretionary Access Control - DAC) are not enough as they can be easily changed
+	
+	SELinux adds MAC (Mandatory Access Control) which all users cannot bypass
+		
+What are the SELinux modes?
+
+	1. Enforcing
+		a. Enforces loaded policies. Default.
+	2. Permissive
+		a. Only logs access violations. 
+		b. Helpful for testing and troubleshooting apps and policy rules
+	3. Disabled
+		a. strongly discouraged!
+		b. Not even possible in the future: RHEL 9
+
+
+SELinux Protection
+
+	SELinux secures every file, port, process, or directory by assigning an SELinuc context to each.
+	
+		The context matches the policy rule. By defauly, no access! A policy rule is needed to grant access.
+		
+Please show me an example label in a SELinux policy file.
+
+	user:role:type:Level file
+	
+		wasadmin:object_r:httpd_sys_content_t:s0/ar/www/html/file2
+		
+		
+

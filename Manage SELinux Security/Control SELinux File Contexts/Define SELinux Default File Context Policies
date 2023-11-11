@@ -1,0 +1,32 @@
+How do I know what policy sets apply to my files?
+
+	Run:
+		semanage fcontext -l
+		
+	Be prepared for regex in the result.
+	
+	Keep in mind that this means the context applies to the directory and all files/directories in that directory:
+	
+		(/.*)?
+		
+	The most specific context applies. Just like file permissions!
+	
+How do I add a file context policy?
+
+	semanage fcontext --add
+	
+	Example 
+		[root@host ~]# semanage fcontext --add -t httpd_sys_content_t '/virtual(/.*)?'
+		
+	Example: let the people access the web server!
+		semanage fcontext --add -t httpd_sys_content_t'/var/www/html(/.*)?'
+	
+How do I recmove a file context polixy?
+
+	semanage fcontext --delete
+	
+Should've mentioned this earlier. Do I need to install anything to use semanage and restorecon?
+
+	Yea. Youre're going to need to install:
+		policycoreutils
+		policycoreutils-python-utils

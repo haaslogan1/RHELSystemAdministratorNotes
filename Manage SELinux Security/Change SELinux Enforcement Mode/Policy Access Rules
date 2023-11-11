@@ -1,0 +1,27 @@
+Tell me about Policy Rules for a web server
+
+
+	There are a few context types (notice every tpe ends in '_t') for a web server:
+		the web server process: httpd_t
+		files in the var/www/html directory: httpd_sys_content_t
+		
+In that case, how does the web server process access the necesssary /var/www/html files?
+
+	Good question! ;) 
+	
+	The httpd_t web server process has a pre-defined policy rule allowing the Apache server httpd process to access the httpd_sys_content_t type context files
+	
+How do I check SELinux contexts for files, processes, etc?
+
+	Many commands use the -Z option
+	
+	Example: check 'label' (aka context) for processes on my machine:
+		[logan@logan ~]$ ps axZ
+		LABEL                               PID TTY      STAT   TIME COMMAND
+		
+	Example: Check context for the var directory
+	
+		[logan@logan /]$ ls -Z /var
+		
+		
+

@@ -1,0 +1,66 @@
+Is there a package I can install to help troubleshoot SELinux issues?
+
+	of course!
+	
+	The settroubeshoot-server package!
+	
+What happens when SELinux denies an action?
+
+	Well, the user (who might be malicious) cannot perform that action at the moment.
+	
+	Then, the AVC (access vector cache) logs a message in the /var/log/audit/audit.log file.
+	
+	The SELinux troubleshooting service (settroubleshoot-server package) sends a summary to the /var/log/messages file
+	
+What are some best practices when reviewing SELinux events?
+
+	(1) Check the event's UUID in the /var/log/messages log file
+	
+	(2) Run sealert -l UUID to comprehensive details
+	
+How do I see all existing events?
+
+	Run:
+		 sealert -a /var/log/audit/audit.log
+	
+What if I don't want to use the CLI?
+
+	Yikes, you should get used to the CLI.
+	
+	Luckily, the web console has a SELinux tab which provides an easy way to enable SELinux and resolve SELinux access control errors.
+	
+General Troubleshooting Flow
+
+	Permission not granted to execute an action 
+	
+	->
+	
+	View /var/log/messages to find the most recent AVC message (searching for sealert)
+	
+	-> 
+	
+	Extract the UUID from the messages log
+	
+	->
+	
+	Run:
+		sealert -l UUID
+		ausearch -m AVC -ts today
+		
+	-> 
+	
+	Find the source process, necessary context, and target object (file)
+	
+		You can find necessary context by looking at the file:
+			ls -Z file
+	
+	->
+	
+	ONLY IF APPLICABLE:
+		Add the SELinux permission via:
+			semanage fcontext -a -t TYPE FILE
+			semanage fcontext -a -t TYPE 'DIRECTORY(/.*)?'
+			
+			
+			
+

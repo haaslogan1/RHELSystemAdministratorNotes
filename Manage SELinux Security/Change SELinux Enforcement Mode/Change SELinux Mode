@@ -1,0 +1,29 @@
+How do I check which mode I am in (permissive, enforcing, or disabled)?
+	
+	Use the getenforce command!
+	
+	Example: not good :|
+	
+		[logan@logan /]$ getenforce
+		Disabled
+		
+How do I change mode?
+
+	Use the setenfornce command!
+	
+	Example: again, not good :| 
+	
+		[logan@logan /]$ setenforce Enforcing
+		setenforce: SELinux is disabled
+		
+What should I do after changing mode?
+
+	Reboot! Some processes may need to be rebooted to start enforcing SELinux.
+	
+How do I set the default mode?
+
+	Modify this file: /etc/selinux/config
+	
+	Then, rre-boot!
+	
+

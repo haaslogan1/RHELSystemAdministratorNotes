@@ -1,0 +1,14 @@
+How do I change the SELinux context of a file?
+
+	2 steps:
+	
+		1. Create a file context with the following command:
+			i. semanage fcontext
+		2. Set the context for the file
+			i. restorecon
+	
+Is there a one-step way to change the context?
+	
+	chcon allows you to quickly modify the SELinux context. However, the context (set by chcon) will not survive running restorecon
+	
+
