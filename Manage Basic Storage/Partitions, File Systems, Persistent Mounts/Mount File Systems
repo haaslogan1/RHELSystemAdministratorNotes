@@ -1,0 +1,15 @@
+Why Mount?
+	
+	Once you mount a file system, users can access or write files on the device.
+	
+How do I manually mount again?
+
+	Run:
+		mount [device] [location]
+		
+	Example: 
+		mount /dev/vdb1 /mnt_spot
+		
+	By default, running mount will list mounted devices
+	
+

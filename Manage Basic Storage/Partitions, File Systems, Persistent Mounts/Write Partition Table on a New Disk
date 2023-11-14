@@ -1,0 +1,42 @@
+How do I write a partition table on a new disk?
+
+	1) Write a disk label: tells OS which partition scheme to use
+		parted /dev/vdb mklabel msdos
+		
+		parted /dev/vbd mklabel gpt
+		
+		
+		WARNING: running this command on an existing drive wipes all data
+		
+	2) Use the interactive parted tool to actually make the partition
+		
+		Steps will vary whether you make a GPT or MBR partition
+		
+		Non-interactive GPT example
+			parted /dev/vdb mkpart userdata xfs 2048s 1000MB
+			
+		Non-interactive MBR example
+		
+			parted /dev/vdb mkpart primary xfs 2048s 1000MB
+		
+	3) Run:
+		
+		udevam settle
+		
+		This command waits for the system to notice the new partition and make a new device file in the /dev directory
+		
+		
+How do I delete partitions?
+
+	
+	1) Run: 
+		parted [device name] print
+		
+	2) Find the partition number that you want to delete
+	3) Run:
+		
+		parted [device name] rm [number from (2)]
+		
+		
+		
+

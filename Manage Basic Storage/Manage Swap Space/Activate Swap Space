@@ -1,0 +1,9 @@
+How do I activate swap space?
+
+	Use this command:
+		swapon [block device]
+		
+	Run the following command to inspect available swap spaces:
+		free
+		
+

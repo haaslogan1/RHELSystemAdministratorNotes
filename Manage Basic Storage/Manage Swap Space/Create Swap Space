@@ -1,0 +1,15 @@
+How do I create swap space?
+
+	2 steps:
+	
+		1) Create a partition with file system type linux-swap
+		2) Place a swap signature on the device
+	
+How do I apply a swap signature to the block device?
+
+	Use the mkswap [block device] command
+	
+	This creates a single block of data at the beginning and leaves the rest so the kernel can use it for storing memory pages.
+	
+	
+

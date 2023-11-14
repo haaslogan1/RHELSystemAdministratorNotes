@@ -1,0 +1,24 @@
+What is the default priority?
+
+	Use the first swap space until full, move on to second until full, …
+	
+	Default priority is -2
+	
+How do I set a priority?
+
+	In the /etc/fstab file again!
+	
+	Example:
+		UUID=1  swap   swap   defaults  0 0
+UUID=2  swap   swap   pri=4     0 0
+UUID=3  swap   swap   pri=10    0 0
+		
+		With these unrealistic UUIDs, the priority orfer will be 3,2,1
+		
+How do I conveniently see priorities?
+	
+	Run:
+		swapon --show
+		
+		
+

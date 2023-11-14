@@ -1,0 +1,15 @@
+How do I activate swap space persistently?
+
+	Again, do it in the /etc/fstab file!
+
+	UUID=… swap swap defaults 0 0
+	
+	Parameters
+		We see swap instead of the mount point because swap devices are not accessible through the directory structure
+		
+		Also, file system type = swap in this case
+		
+Don't forget to reload daemons!
+
+
+

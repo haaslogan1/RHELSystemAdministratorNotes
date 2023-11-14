@@ -1,0 +1,15 @@
+Are there any pre-requisites to creating a file system?
+
+	Yes! Make the block device first.
+	
+How do I "create a file system?"
+
+	"Create file system" = apply a file system to a block device
+	
+	To apply a XFS filesystem for the block device at /dev/vdb1, run:
+		mkfs.xfs /dev/vdb1
+		
+	To apply a ext4 file system for the block device at /dev/vdb1, run:
+		mkfs.ext4 /dev/vdb1
+		
+

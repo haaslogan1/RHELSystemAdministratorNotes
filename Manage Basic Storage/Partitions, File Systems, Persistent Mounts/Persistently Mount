@@ -1,0 +1,15 @@
+How do I make a device automatically mounted after re-booting?
+
+	Modify the /etc/fstab file to include the mounted device
+	
+	Example entry in this file:
+		UUID=… [mount point] [file system type] [comma-seperated list of options] [used by dump command to back up the device] [whether fsck should run - dependent on file system type]
+		
+		
+	Reload the daemons after:
+		systemctl daemon-reload
+		
+Important: use UUIDs to distinguish between block devices. Block device names are subject to change. UUIDs never change.
+
+
+

@@ -1,0 +1,19 @@
+Tell me about the scheme used for Basic Intput/Output System's firmware (small memory chip): MBR (Master Boot Record)
+
+	Up to 4 primary partitions
+	With 32-bit partition sice, MBR allows a size up to 2 tebibytes (TiB)
+	
+	2 TiB is a limitation making this partition scheme outdated
+	
+Today's partition scheme: GPT (GUID Partition Table)
+	
+	Used for system's running UEFI (unified extensib;e firmware interface)
+	
+	Max: 128 partitions
+	Allocates 64 bits for logical block addressed
+		This support up to 8 billion TiB (or 8 zebibytes (ZiB))
+		
+	Other benefits over MBR:
+		GUID - globally unique identifier
+		Redundancy - primary GPT at fromt and backup GPT at the end
+		Uses checksum to detect error

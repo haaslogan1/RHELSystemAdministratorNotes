@@ -1,0 +1,12 @@
+Why would I want partitioned disks?
+
+	Easy!
+		a. Limit storage availability for users
+		b. Sperate OS and program files from user files
+		c. Memory swapping
+			i. Memory stored in RAM can be moved when there is more demand for memory than the computer has available
+		d. Limit disk space usage
+			i. This helps with performance of diag tools and taking bakups
+	
+
+

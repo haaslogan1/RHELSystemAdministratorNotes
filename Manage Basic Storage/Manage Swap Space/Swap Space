@@ -1,0 +1,27 @@
+Virtual memory = swap space + RAM
+
+How is memory accessed?
+
+	When a page of memory is inactive in the RAM, the kernel pushes it to the swap space.
+	
+	When a page of memory is needed (and does not exist in the RAM), the kernel moves it from the swap space to the RAM.
+	
+How much RAM is needed versus swap space?
+
+	Red Hat's guide
+		RAM = 2 GB -> Swap space = 2 * RAM
+		
+					If allowing hibernation:
+					swap space = 3 * RAM
+					
+		RAM = 2 GB < x < 8 GB -> swap space = RAM
+						hibernation:
+							swap space = 2 * RAM
+		
+		etc…
+		
+What is Hibernation?
+
+	When powering off a system, hibernation allows all the memory from RAM to be stored in swap space. Then, the system does not need to fully boot. It will needs to restore the RAM content.
+	
+	So, if using hibernation, swap space must be > RAM space

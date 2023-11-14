@@ -1,0 +1,17 @@
+Can admins modify a disk's partition?
+
+	Yes! 
+	
+	Use a partition editor prgram to create, delete, and change partitions.
+	
+What can I use in RHEL?
+
+	parted
+	
+	Works for either MBR or GPT
+	
+parted Syntax
+
+	parted [disk or storage device] [optional subcommand]
+	
+
