@@ -1,0 +1,21 @@
+Extend XFS File System
+
+	Grow a mounted file system:
+	
+		xfs_growfs /my/mount_point
+		
+Extend EXT4 File System
+
+	Just a different command from XFS:
+		
+		resize2fs /dev/myDevice/myLV
+		
+	NOTE: EXT4 growth passes a LV as the param while XFS uses the mount point.
+	
+Differences: XFS v. EXT4 Growth
+
+		1. XFS will only grow, but you can shrink an ext4 file system
+		2. XFS only supports an online resize, ext4 can be offline
+		3. Params passed to the commands
+
+

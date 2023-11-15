@@ -1,0 +1,49 @@
+How do I build LVM storage?
+
+	We just went over that in the last page…
+			1. Determine devices for physical volume
+			2. Initialize the devices as LVM physical volumes
+			3. Create volume group from the physical volumes
+			4. Create logical volumes from space in the volume group
+			5. Format the logical volume as needed (which I learned how to do in the 'Manage Basic Storage' section)
+
+Step 1: Prepare Physical Devices
+
+	This is simply just partitioning on a physical device (setting the physical device to the Linux LVM partition type):
+	
+		parted /dev/my_physical_device mklabel gpt mkpart primary 0B 1B
+		
+		parted /dev/my_physical_device mkpart primary 1B 2B
+		
+		parted  /dev/my_physical_device set 1 lvm on
+		parted  /dev/my_physical_device set 2 lvm on
+		
+		udevadm settle
+		
+Step 2: Create Physical Volumes
+
+	Label the physical partition as an LVM physical volume.
+	
+	Example: Label two devices (/dev/device1 and /dev/device2) as PVs ready for creating VGs
+	
+		pvcreate /dev/device1 /dev/device2
+		
+Step 3: Create Volume Group
+
+	Build 1+ PVs into a VG
+	
+	Example: Create the myVG using the physical volumes created in the last example.
+	
+		vgcreate myVG /dev/device1 /dev/device2
+		
+Step 4: Create Logical Volume
+
+	Create a LV from available PEs in a VG
+	
+	Example: Use the VG from step 3 to create a LV with name myLV, a size of 2 bytes
+		lvcreate -n myLV -L 2B myVG
+		
+
+
+	
+

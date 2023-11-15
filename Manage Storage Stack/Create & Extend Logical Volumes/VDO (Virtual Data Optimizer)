@@ -1,0 +1,26 @@
+What is a VDO?
+
+	It is essentially of LV composed of two LVs:
+		(1) VDO pool LV
+			Stores, deduplicates, compresses, and sets the size of the VDO volume backed by the PV
+			
+		(2) VDO LV
+			On top of the VDO Pool LV
+			
+			Set the size before (1) can take action
+			
+What does a VDO offer?
+	
+	LVM VDO can present deduplicated stoage as a normal LV
+	
+How to install?
+
+	dnf install vdo kmod-kvdo
+	
+How to create a vdo?
+
+	Example: Create a VDO named myVDO-LV, size 5 gigs, and from virtual group vg01
+		
+		lvcreate --type vdo --name myVDO-LV --size 5G vg01
+		
+

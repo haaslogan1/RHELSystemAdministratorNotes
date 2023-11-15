@@ -1,0 +1,31 @@
+Are there any prereqs to extending a LV?
+
+	Yes. If there is not space, you need to extend the PV or VG first.
+	
+How do I Extend VG size?
+
+	(1) Add more size by creating a new PV. Documented in 'Build LVM Storage'
+	
+		Say that I created a third partition on device /dev/vdb
+		
+	(2) Add the new PV to the VG 'myVG'
+	
+		vgextend myVG /dev/vdb3
+		
+How do I extend Logical Volume Size?
+
+	NOTE: This is a signfiicant benefit of LVs. You can extend storage without downtime.
+	
+	We can extend the LV by adding from a VG.
+	
+	Example
+
+		First, check that we have space in the VG:
+			
+			vgdisplay
+			
+		Then, use lvextend to extend the LV by 500 MB:
+		
+			lvextend -L +500M /dev/myDevice/myLV
+			
+		NOTE: Without the '+', this will set the size of the LV to only 500M.

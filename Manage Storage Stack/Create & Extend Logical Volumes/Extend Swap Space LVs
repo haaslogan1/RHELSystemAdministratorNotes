@@ -1,0 +1,22 @@
+NOTE: must be offline to extend swap space LVs
+
+Steps
+
+	1. Deactivate swap space on the LV
+	
+		swapoff /dev/myVG/swapSpace
+		
+	2. Extend the LV
+	
+		lvextend -L +300M /dev/myVG/swapSpace
+		
+	3. Format the LV as swap space
+	
+		mkswap /dev/myVG/swapSpace
+		
+	4. Activate the swap space on the LV
+	
+		swapon /dev/myVG/swap
+		
+		
+

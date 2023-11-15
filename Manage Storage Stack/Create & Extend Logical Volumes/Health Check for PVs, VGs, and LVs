@@ -1,0 +1,16 @@
+How do I check in on my PVs?
+	
+	Example: check in on the PV on /dev/myDevice
+		pvdisplay /dev/myDevice
+		
+How do I check in on my VGs?
+	
+	Example: VG myVG on the myDevice device
+		vgdisplay myVG
+		
+How do I check in on my LVs?
+	
+	Example: LV myLV on the myDevice device
+		lvdisplay /dev/myDevice/myLV
+		
+

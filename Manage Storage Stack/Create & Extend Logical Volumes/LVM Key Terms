@@ -1,0 +1,25 @@
+LVM = Logical Volume Manager
+
+Key Terms
+
+	Physical Devices
+		Disk partitions, whole disks, RAID arrays, SAN disks
+		
+		Must:
+			1.  be initialized as an LVM physical volume 
+			2. use entire physical device
+		
+	Physical Volumes (PVs)
+		Basically the physical device.
+		
+		LVM makes physical extents (PEs) to segment the PV into the smallest chunk unit
+		
+	Volume Groups (VGs)
+		Storage pool consisting of PVs. Each PV must be part of only one VG.
+		
+	Logical Volumes (LVs)
+		Storage devices for users, apps, and OSs. They are made of free LEs.
+			An LE (logical extent) is an abstraction of a PE. By default, 1 PE = 1 LE
+			
+
+

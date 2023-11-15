@@ -1,0 +1,15 @@
+How do I remove VG storage?
+
+	Move unused PVs from the VG
+	
+	Example Automatically backup the metadata of the VG (-A) when moving data between PVs to reduce the amount of PVs storing data within a VG:
+		
+		pvmove -A /dev/myPV
+		
+	Example: remove PV from a VG
+	
+		vgreduce myVg /dev/myPV
+		
+	
+		
+

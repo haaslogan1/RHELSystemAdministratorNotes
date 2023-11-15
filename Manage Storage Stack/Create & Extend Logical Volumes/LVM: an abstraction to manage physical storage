@@ -1,0 +1,14 @@
+What do I need to do before creating LVM storage?
+
+	Must build structures in a logical workflow.
+	
+How do I build structures in a logical workflow?
+
+	1. Determine devices for physical volume
+	2. Initialize the devices as LVM physical volumes
+	3. Create volume group from the physical volumes
+	4. Create logical volumes from space in the volume group
+	5. Format the logical volume as needed (which I learned how to do in the 'Manage Basic Storage' section)
+
+
+

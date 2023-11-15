@@ -1,0 +1,26 @@
+Steps
+
+	1. Prepare the File System
+	
+		Move all data (that must be kept) to another file system
+		
+		Then, unmount the file system:
+			umount /mnt/data
+			
+		Remove /etc/fstab entries, if necessary
+		
+	2. Remove the LV
+	
+		lvremove /dev/myVG/myLV
+		
+	3. Remove the VG
+	
+		vgremove myVG
+		
+	4. Remove the PVs
+	
+		pvremove /dev/myPV1 /dev/myPV2
+		
+		
+		
+
