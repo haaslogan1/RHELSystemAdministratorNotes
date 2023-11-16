@@ -1,0 +1,15 @@
+What is Stratis?
+
+	Local storage Management tool that configures initial storage, changes a storageconfig, and uses advanced storage features.
+	
+	It is currently a "Tech Preview" but it will be fully supported in later versions of RHEL 9.
+	
+What is the advantage of Stratis?
+
+	Stratis dynamically allocates storage by the thin provisioning concept. So, a file system may appear to have 1 TiB of storage, but stratis will only allocated some amount (say 100 GiB) from the pool until more is needed.
+	
+How many file systems can a Stratis pool provide physical storage to?
+
+	Up to 2^24 file systems!
+	
+

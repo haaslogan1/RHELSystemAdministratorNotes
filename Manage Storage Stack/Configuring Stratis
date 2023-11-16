@@ -1,0 +1,64 @@
+Do I need to install any packages to admnister Stratis Storage Management?
+
+	Yes!
+	
+	1. stratis-cli
+		a. Provides the stratis commands which can be used to re-configure the stratisd system daemon
+	2. stratisd
+		a. Provides the stratisd service
+
+Enable Stratis (after installation of the stratisd package)
+
+	systemctl enable --now stratisd
+	
+Create Stratis Pools
+
+	stratis pool create [pool name] [block device]
+	
+	Example
+		stratis pool create myPool /dev/myDevice
+		
+List Stratis Pools
+
+	stratis pool list
+
+Add a Block Device to an Existing Stratis Pool
+
+	stratis pool add-data [pool name] [block device]
+	
+List Block Devices on a Stratis Pool
+
+	stratis blockdev list [pool name]
+	
+Create a file system in a Stratis Pool
+
+	stratis filesystem create [pool name] [file system name]
+	
+List File Systems ina Stratis Pool
+
+	stratis filesystem list
+	
+Create a snapshot of a file system in a Stratis Pool
+
+	(the snapshot is stored independent of the Stratis Pool Storage)
+	
+	stratis filesystem snapshot [pool name] [fs name] [snapshot name]
+	
+Persistently Mount a File System stored in a Stratis Pool
+
+	Everything is the same + add an option for the stratisd sys daemon to boot before mounting the fs
+	
+	Run (to find UUID of the fs):
+		lsblk --output=UUID /dev/stratis/myPool/myFs
+		
+	Add the FS in /etc/fstab:
+		UUID=c7b57190-8fba-463e-8ec8-29c80703d45e /mount_point xfs defaults,x-systemd.requires=stratisd.service 0 0
+		
+		
+Delete a snapshot
+
+	stratis fielsystem destroy [pool name] [snapshot name]
+	
+Delete a File System
+
+stratis filesystem destroy [pool name] [fs name]
