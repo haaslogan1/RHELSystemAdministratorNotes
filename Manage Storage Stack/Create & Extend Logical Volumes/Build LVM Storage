@@ -44,6 +44,16 @@ Step 4: Create Logical Volume
 		lvcreate -n myLV -L 2B myVG
 		
 
+Step 5: Add FS to the logical volume
 
+	mkfs -t xfs /dev/myVG/mlLV
+
+Step 6: Verify Size (after mounting the FS)
+
+	df -f /mountpoint
+	
+	OR 
+	
+	lsblk --fs
 	
 
