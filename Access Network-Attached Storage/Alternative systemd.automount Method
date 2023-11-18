@@ -1,0 +1,15 @@
+Why?
+	It may be slightly easier than installing autofs, if you only want to auto-mount one directory (fully qualified path)
+	
+How?
+	(1) Define the mount in /etc/fstab
+	
+		For example, mount a device at this location: /mntpoint/logan
+	
+	(2) Run:
+	
+		systemctl daemon-reload
+	
+		systemctl start mntpoint-logan.automount
+		
+

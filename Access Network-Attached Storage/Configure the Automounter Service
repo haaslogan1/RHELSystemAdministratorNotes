@@ -1,0 +1,18 @@
+(1) Install!
+
+	sudo dnf install autofs nfs-utils
+	
+(2) Create a master map file. This file configures: (1) base directory for mount points (2) Mapping file to create automounts
+
+	sudo vim /etc/auto.master.d/demo.autofs
+		# /shares is the base directory for automounts
+		# /etc/auto.demo contains mount details
+		/shares /etc/auto.demo
+		
+(3) Create indirect map. The extension should reflect the content of the map (demo in this case)
+
+	sudo vim /etc/auto.demo
+		# Mount the /share/work directory (inheriting froms tep 2), with r+w+sync options, using the directory from the example_server machine.
+		work -rw,sync example_server:/my/home/
+		
+

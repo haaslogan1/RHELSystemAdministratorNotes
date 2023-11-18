@@ -1,0 +1,9 @@
+How do I persistently mount an exported NFS directory?
+
+	Easy! It is just like a normal persistent mount except:
+		1. Use the server:... path instead of the UUID
+		2. Specify the NFS file system type
+	
+	Example
+		server_name:/export /mountpoint nfs rw 0 0
+

@@ -1,0 +1,17 @@
+How do I manually mount an exported NFS directory?
+
+	1. Make the mount point
+		
+		mkdir /mountpoint
+		
+	2. Simply, mount what you need!
+		
+		mount -o rw,sync server_name:/exported_dir /mountpoint
+		
+			Adding the -o flag to specify read/write access with all changes synced to the NFS server's copy of the directory
+
+Will a manual mount persist through a reboot?
+
+	No.
+	
+

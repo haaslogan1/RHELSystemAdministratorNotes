@@ -1,0 +1,11 @@
+RPC-based NSFv3 Server
+
+	Check exported directories by running:
+		showmount --exports server
+		
+Querying a NFSv4 Server: equally as easy as mounting any file system
+
+	mkdir /mount
+	mount server_name:/ /mount
+	ls /mount
+

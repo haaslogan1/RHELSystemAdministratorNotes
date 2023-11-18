@@ -1,0 +1,21 @@
+Why NFS?
+
+	Network File System (NFS) allows a system to share directories and files with others over a network.
+	
+What does an NFS server do?
+
+	NFS servers export directories. 
+	
+What does an NFS client do?
+
+	NFS clients can mount the exported directories on their local machine.
+	
+	How?
+			1. Manually via the mount command
+			2. Persistently: /etc/fstab
+			3. Automounter!
+				1) Which we will soon learn about.
+			
+		Must install nfs-utils package first.
+		
+

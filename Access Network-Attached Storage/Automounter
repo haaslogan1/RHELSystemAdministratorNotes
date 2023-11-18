@@ -1,0 +1,28 @@
+Why automounter?
+
+	Automounter is a service (autofs) that solves this issue:
+		Unprivileged users cannot run mount. If their block devices (like a removable disk drive) is not automatically mounted, they can't access it.
+		
+	Automounter (autofs) will automatically mount devices until they are not being actively used.
+	
+How is autofs configured?
+
+	Automounter is configured similar to /etc/fstab
+	
+	However, file systems become accessible when a user wants to reach them (on-demand) rather than from boot.
+	
+Benefit of automount
+	1. Both unmounted and mounted but inactive file systems use almost no resources
+	2. Less likely to face an unexpected file corruption because the mount config is being refreshed whenever users stop and start using the FS
+		a. Persistently mounted file systems face issues since it may be months between reboots
+	3. Avoids redundant NFS servers and paths
+	
+Direct and Indirect Mounting
+
+	Direct:
+		All mounting that we've worked on up until this point. Mount a specific directory.
+		
+	Indirect:
+		Mount point set when the demand is made.
+		
+

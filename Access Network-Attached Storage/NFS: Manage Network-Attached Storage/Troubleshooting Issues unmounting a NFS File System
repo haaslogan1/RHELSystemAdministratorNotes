@@ -1,0 +1,12 @@
+Same troubleshooting process as a normal file system. If umount fails, the most likely issue is that a file is open for some reason (maybe a user or application is causing it).
+
+First Step
+	Run:
+		lsof /mountpoint
+		
+	This will tell us which files are open for the mounted file system.
+	
+In a dire situation
+	You can run umount -f ... to force the issue.
+	
+
