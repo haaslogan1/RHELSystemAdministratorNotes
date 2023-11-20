@@ -1,0 +1,23 @@
+Proactively debug boot issues
+
+	Before rebooting run:
+		systemctl enable debug-shell.service
+		
+	Early in the boot process, the system will automatically log in as root so you can debug
+	
+	IMPORTANT: this is clarly risky.
+	
+Activate debug shell during boot
+	On the line starting with linux, press e to append the following param:
+		system.debug-shell
+	Press ctrl+x to boot into the debug shell
+	
+Jobs: sometimes they stop your system from booting
+
+	If a job cannot start (that is part of the boot process), this will delay or stop subsequent jobs used in the boot process.
+	
+	Admins can check the status of jobs:
+		systemctl list-jobs
+		
+	Running jobs must complete before the waiting jobs can start running
+
