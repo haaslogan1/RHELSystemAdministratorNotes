@@ -1,0 +1,11 @@
+What common FS issues lead to the inability to boot?
+
+	(1) Corrupted persistent FS
+	
+		systemd tries to repair it, but will open an emergency shell if it cannot
+		
+	(2) Nonexistent device or UUID
+	
+		systemd will time out trying to find the device.
+		
+
