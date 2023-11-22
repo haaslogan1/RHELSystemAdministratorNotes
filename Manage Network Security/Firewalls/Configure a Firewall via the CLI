@@ -1,0 +1,22 @@
+firewalld zones
+
+	check the firewalld.zone(5) man page
+	
+List firewall services
+
+	firewall-cmd --get-services
+	
+Set default zone to dmz
+	
+	firewall-cmd --set-default-zone=dmz
+	
+Assign all traffic from the 255.0.0.0/8 network to the internal zone
+
+	firewall-cmd --permanent --zone=internal --add-source=255.0.0.0/8
+	fireall-cmd --reload
+	
+Set a signle IP address (1.1.1.1/32, in this ex.) to the dmz zone
+
+	firewall-cmd --permanent --zone=dmz --add-source=1.1.1.1/32 
+	firewall-cmd --reload
+

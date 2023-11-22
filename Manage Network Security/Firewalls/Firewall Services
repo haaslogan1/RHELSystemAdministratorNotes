@@ -1,0 +1,32 @@
+netfilter framework
+
+	The kernel provides the netfilter framework for:
+		packet filtering
+		network address traslation
+		port translation
+		
+	The netfilter framework uses hooks which:
+		intercept event (like a packet entering an interface)
+		then, run other related routines (like a firewall rule)
+		
+		kind of like a TAI!
+		
+nftables framework
+
+	nftables packet classification framework 
+	
+firewalld
+
+	The firewalld service simplifies networking by classifying network traffic into zones
+	
+		Each zone has a list or ports and services that are open or closed (like the sshd service on port 22)
+		
+	Packet is sent to your network
+		The firewalld service checks whether there is a zone for the source address of the packet
+			Zone exists -> those rules apply
+			No zone exists -> follow rules of the incoming network interface
+			Network interface is not associated with a zone -> use the default zone rules
+				The default zone is typically set to the public zone
+				Later, firewalld maps the lo loopback interface to the trusted zone
+				
+
