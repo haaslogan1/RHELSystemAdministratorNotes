@@ -19,4 +19,7 @@ Set a signle IP address (1.1.1.1/32, in this ex.) to the dmz zone
 
 	firewall-cmd --permanent --zone=dmz --add-source=1.1.1.1/32 
 	firewall-cmd --reload
-
+	-firewall
+	
+Add the 1000 tcp port to the public zone
+	firewall-cmd --permanent --zone=public --add-port=1000/tcp
