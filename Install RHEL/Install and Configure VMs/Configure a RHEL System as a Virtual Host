@@ -1,0 +1,15 @@
+Option 1 via the CLI
+	Step 1: Install the Virtual Host DNF Package Group
+		dnf group install "virtualization host"
+		
+	Step 2: Verify you have the necessary hardware
+		virt-host-validate
+		
+	Step 3: Insall a VM
+		 virt-install ..
+		
+Option 2: Admin Console
+	Just need to install cockpit and work from there
+	
+	
+

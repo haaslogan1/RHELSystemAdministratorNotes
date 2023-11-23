@@ -1,0 +1,26 @@
+(1) Create Kickstart file
+
+	Two options:
+			1. Write it in a text editor as shown before
+			
+				Use ksvalidator to validate the file
+				
+				Start with samples from:
+					/root/anaconda-ks.cfg
+				
+			2. Use a kickstart generator
+			
+(2) Publish the file to anaconda
+
+	You need to make it available. Think:
+		Accessible network server
+		USB disk or CD-ROM
+		local hard disk
+		
+	Usually, it is available via the web, FTP, or NFS server
+	
+(3) Boot Anaconda pointing to the Kickstart file
+
+	Add inst.ks parameter to the install kernel
+	
+

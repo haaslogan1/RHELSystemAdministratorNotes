@@ -1,0 +1,20 @@
+Why KVM?
+
+	KVM lets you split a single machine into multiple different VMs each running a different OS (even Windows)
+	
+How do I configure KVM virtualization?
+
+	virsh on the CLI
+	
+	Or via the admin console
+	
+How popular is KVM?
+
+	Very! RHEL is often used as a thich host deploying multiple other VMs
+	
+	There is even a type of RHEL for this:
+		Red Hat Virtualization Hypervisor
+		
+		Then, of course, Red Hat OpenShift Virtualization to enable deployment and containers on bare metal
+		
+

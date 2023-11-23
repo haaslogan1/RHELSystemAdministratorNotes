@@ -1,0 +1,38 @@
+Install
+	
+	url containing the install image
+		url --url="url"
+
+	repo: find packages that you want
+		repo --repo="name" --baseUrl=http://...
+		
+	force text-mode install
+		text
+		
+	
+
+Device and Partition
+
+	remove partitions before creating them during install
+		clearpart
+		
+	specify size, format, and name of a partition
+		part ...
+		
+	automate the last step
+		autopart
+		
+	don't let anaconda modify your disk
+		ignoredisk --drives=
+		
+	required: where do I install the bootloader?
+		bootloader --location=... --boot-drive=...
+		
+	create lvm groups and volume
+		volgroup ...
+		logvol ...
+		
+There are many others that I will not memorize. Reference RHEL docs for the kickstart commands.
+
+
+

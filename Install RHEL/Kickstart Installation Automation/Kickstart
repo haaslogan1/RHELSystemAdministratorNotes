@@ -1,0 +1,17 @@
+Why Kickstart?
+	You can automate the installation process! Think time-consuming activities like partitioning a disk.
+	
+	Especially helpful when there are multiple upcoming installations.
+	
+How are kickstart scripts formatted?
+
+	%pre and %post
+		% denotes the beginning of a section
+		&end denotes the end of a section
+		
+		pre is before disk partitioning
+			IMPORTANT: extremely difficult to troubleshoot. It is best not to do this one.
+		post is after the initial installation
+		
+
+

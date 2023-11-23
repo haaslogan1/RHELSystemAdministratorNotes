@@ -1,0 +1,8 @@
+How can I troubleshoot during the install?
+
+	With the tmux terminal. This is accessible via: ctrl + alt + f1
+	
+	Ctrl + B + 1-6 provides options within the tmux terminal.
+	
+	
+

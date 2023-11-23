@@ -1,0 +1,25 @@
+First: Download the image you need from the Customer Portal
+
+	There are a few options:
+		1. Binary image file (ISO 9660 format) 
+			This contains all the repos needed for installation
+			
+		2. boot ISO image (smaller than (1))
+			You're going to need internet connection to get some package repos through the install process..
+			
+		3. QCOW2 image
+			Ready to go! Best for cloud/enterprise envs.
+			
+		4. Source code
+			Difficult install, but good for development
+
+Second (for options (1) and (2) above):
+
+	Simply use the GUI to select config preferences then begin the installation... RHEL handles the rest.
+
+Want to save your current sys for future use?
+
+	Make an image with the composer-cli command!
+	
+	
+
