@@ -9,8 +9,12 @@
 					/root/anaconda-ks.cfg
 				
 			2. Use a kickstart generator
-			
-(2) Publish the file to anaconda
+
+(2) Validate the Kickstart file
+
+	ksvalidator
+
+(3) Publish the file to anaconda
 
 	You need to make it available. Think:
 		Accessible network server
@@ -22,5 +26,4 @@
 (3) Boot Anaconda pointing to the Kickstart file
 
 	Add inst.ks parameter to the install kernel
-	
 
