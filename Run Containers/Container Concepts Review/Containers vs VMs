@@ -1,0 +1,19 @@
+Similarities
+	• They both isolate app runtime resources from the hypervisor or OS
+	
+VMs
+	• Multiple OSs can run on one hardware machine
+	• hypervisor to divide hardware into multiple virtual hardware systems (VMs)
+	• requires a complete OS to support an app
+
+Containers
+	• Runs directly on the host OS
+	• Shares resources with all other containers on the sys
+	• Shares only the host's kernel
+		○ app process is completely isolated from the rest of the sys
+	• Doesn't require nearly as many resources as a VM
+		○ quick startup! :)
+	• Include all dependenices
+		○ sys, app, programming, and config dependencies
+
+

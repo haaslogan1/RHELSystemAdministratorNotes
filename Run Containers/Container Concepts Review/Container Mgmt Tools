@@ -1,0 +1,7 @@
+What does RHEL provide?
+	
+	manage containers and images -> podman
+	inspect, copy, delete, and sign images -> skopeo
+	create container images -> buildah
+	
+

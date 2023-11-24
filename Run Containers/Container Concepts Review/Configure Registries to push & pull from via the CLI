@@ -1,0 +1,18 @@
+root user / default  non-priviliged user
+
+	The config specified in /etc/containers/registires.conf will be used
+	
+Override the registries.conf config
+
+	~/.config/containers directory
+	
+What can I specify in these config files?
+
+	Important things like:
+		unqualified search registries list
+			This is a list of registries to search in if the FQDN is not specified
+		the registries in that list
+			location (hostname)
+			insecure - HTTPS or HTTP
+			blocked - true or false
+

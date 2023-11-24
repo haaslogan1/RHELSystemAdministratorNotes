@@ -1,0 +1,16 @@
+Refresher: what is a container image?
+
+	Container images store an application, all app dependencies, and codified instructions for the OS to build the cotnainer.
+	
+Image Registries & Security
+
+	It is important to:
+		1. Establish trust of any image that you want to run as a container
+		2. Trust the registry that you pull that image from
+			i. Review how the registry (ex. DockerHub) determines the image is secure.
+Login to access a Registry
+
+	Example using podman:
+		podman login myregistry.example.com
+		
+

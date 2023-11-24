@@ -1,0 +1,12 @@
+Portability
+	Containers can be saved at any time and moved between systems. This makes moving from dev to production much easier.
+	
+Ephemeral (aka temporary in my vocab)
+	Containers will stop when they are not used and re-spawn (as a new container process) when they are needed
+
+Architecture Best Practice
+
+	Limit only one service per container. So, configuration changes only have to be implied for one service at a time.
+	
+		For example, one container for a web server and another container for a DB that the web server might need
+

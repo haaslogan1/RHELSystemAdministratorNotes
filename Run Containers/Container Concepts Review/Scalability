@@ -1,0 +1,12 @@
+Kubernetes!
+
+	Kubernertes is a good solution for container-based architectures as it can solve these issues:
+		1. Conttainer availability of essential services
+		2. Usage spikes by increasing or decreasing the number of running containers
+		3. React to failures of a container
+		4. Secure & transparent patching
+	
+Red Hat OpenShift
+	Red Hat OpenShift is a set of modular component and services built on top of Kubernetes
+	
+

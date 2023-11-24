@@ -1,0 +1,23 @@
+Problem with running apps on a VM
+
+	Issue #1: VMs and their OS already contain lots of software + now add everything that your app requires
+	
+	Issue #2: Application and OS dependency versions may vary. Especially if you have multiple apps running on a VM that require different versions of the same software for their dependenices.
+	
+Resolution: container
+	
+	A container is 1+ prcoesses that are isolated from the rest of the VM
+	
+Benefit of containerization
+
+	It is an easy way to package your software and ensure the software has the dependencies it needs.
+	
+	Plus, containerization can simplify deployment and config changes.
+	
+RHEL Implementation
+
+	1. Control groups (cgroups) for resource management
+	2. Namespaces for process isolation
+	3. SELinux and Seccomp (secure computing mode) to enforce security boundaries
+
+

@@ -1,0 +1,14 @@
+What is the difference?
+	
+	If you run a container as a privileged user, it is rootful.
+	
+	If you run a container as a non-privileged regular user, it is rootless.
+	
+Rootless containers
+
+	The container inherits the prviliges of the user who ran the container. 
+		So, a rootless container will not have access to system files and cannot run on ports below 1024.
+		
+Best practice: don't run containers as root. This will only make life easier if a malicious user exploits a vulnerability.
+		
+
