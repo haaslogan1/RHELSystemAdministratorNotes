@@ -1,0 +1,8 @@
+How do I install the tools I need (podman, skopeo, buildah, etc.)?
+	
+	Simply check the version:
+		dnf info container-tools
+		
+	Then, install if the version is what you need:
+		dnf install container-tools
+

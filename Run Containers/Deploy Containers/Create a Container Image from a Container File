@@ -1,0 +1,45 @@
+Example Container File (instructions to build a container image)
+
+	
+	FROM registry.access.redhat.com/ubi8/ubi:latest
+	RUN dnf install -y python36
+	CMD ["/bin/bash", "-c", "sleep infinity"]
+
+What does the above container file instruct?
+
+	base image: registry.access.redhat.com/ubi8/ubi:latest
+	
+	Then, it will install the python36 package and sleep forever to avoid the container terminating after completing the three instructions.
+	
+	Why?
+		developers can run python in this container
+
+
+Build the container image
+
+	podman build -t NAME:TAG DIR
+	
+		NAME: name for the new image
+		TAG: tag for the image
+			default is latest
+		DIR: path to the directory storing the container file
+		
+	Example
+		Build the container container image from the directory storing the container file
+			podman build -t python36:1.0 .
+		Output:
+			STEP 1/3: FROM registry.access.redhat.com/ubi8/ubi:latest
+	`		STEP 2/3: RUN dnf install -y python36
+			...output omitted...STEP 3/3: CMD ["/bin/bash", "-c", "sleep infinity"]
+			COMMIT python36:1.0
+			
+Check that the image was built successfully
+
+	podman images
+	
+Inspect the newly built image
+
+	podman inspect
+	
+	
+

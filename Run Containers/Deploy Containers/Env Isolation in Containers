@@ -1,0 +1,20 @@
+Container isolation
+
+	Containers have their own file sys, networking, and processes. Completely seperate from the rest of the sys.
+
+How do we know containers actually isolate the app's env from the rest of the system (minus the kernel)?
+
+	Just look at the stunning difference between:
+		1. Processes running on the OS
+			i. ps -ax
+		2. Processes running in a container
+			i. podman exec containerID ps -ax
+			
+Importance of 'sh -c' when running podman exec
+	sh -c ensures that the complete command is run in the container avoiding the possibility of Podman determining a speachial char is for the Podman command.
+	
+		Example: this command would not run correctly without 'sh -c'
+			podman exec containerID sh -c 'ps -ax > /tmp/mylog'
+			
+			
+

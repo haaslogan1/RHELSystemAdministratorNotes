@@ -1,0 +1,45 @@
+Container States
+
+	1. Created
+		The container was created, but not started yet.
+		
+	2. Running
+		The container is running with its processes
+		
+	3. Stopped
+		The processes are stopped
+		
+	4. Paused
+		Processes are paused.
+		
+		Not supported for rootless containers.
+		
+	5. Deleted
+		Processes are in a dead state.
+		
+View all containers regardless of state
+	
+	podman ps -a
+	
+	
+Create a container to run later
+	
+	Specify a name and a short ID (first 12 chars of the full ID) of your container image
+	
+		podman create --name python36 <shortID>
+		
+	Checking status of your newly created container
+		Only running containers will show up for:
+			podman ps
+		
+		You need to check all containers to see one that is not running:
+			podman ps -a
+			
+	
+Start the container
+	podman start python36
+	
+		You can also identify the container with the ID instead of the name.
+		
+		
+

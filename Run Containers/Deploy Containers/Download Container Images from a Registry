@@ -1,0 +1,23 @@
+	1. Check which registries podman is configured for
+	
+		podman info
+		
+	2. Search your configured registries for the image you need (python 3.8, in this example)
+	
+		podman search python-38
+		
+	3. Inspect & compare an image with the others across all configured regisitries
+	
+		skopeo search docker://registry.com/python-38
+		
+		Of course, that is not a real image URL, just an ex.
+		
+	4. Pull the image that best matches your needs
+	
+		podman pull registry.access.redhat.com/ubi8/python-38
+		
+	5. Check that the image was pulled successfully
+	
+		podman images
+	
+

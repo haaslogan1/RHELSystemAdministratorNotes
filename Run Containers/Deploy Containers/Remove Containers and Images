@@ -1,0 +1,16 @@
+Pre-req to removing an image
+	1. No container can be running that image
+	
+Pre-req to Removing a Container
+	1. The container must be stopped
+
+Stop a Container
+	podman stop containerName
+	
+Remove a Container
+	podman rm containerName
+	
+Remove an Image
+	podman rmi imageName
+
+

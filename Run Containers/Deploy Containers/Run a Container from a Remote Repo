@@ -1,0 +1,13 @@
+Create & Start a Container at once (no container file needed)
+	
+	Simply use the podman run command. This will pull the image from the repo and run it.
+	
+	Example: almost exactly what our container file did
+	
+		podman run -d --name python38 \
+		registry.access.redhat.com/ubi8/python-38 \
+		sleep infinity
+		
+		-d -> detached mode to run in the background
+		
+

@@ -1,0 +1,11 @@
+Important: files that you create on the local file system will not be accessible within the container (and vice versa).
+
+Give me an example showing how this is useful.
+	
+	Your sys can run python 3.8 while testing your app on a container in python 3.7
+
+Copy files from your local FS to your container
+
+	podman cp /tmp/myfile containerName:/tmp/myfile
+	
+

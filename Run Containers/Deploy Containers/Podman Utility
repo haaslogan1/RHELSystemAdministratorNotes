@@ -1,0 +1,51 @@
+Accessibility
+
+	Since podman does not rely on a daemon, anyone can run podman commands.
+	
+	
+Helpful subcommands
+	
+	Build a container image with a container file (text file with instructions to build a container image)
+	
+		podman build 
+		
+	Run a command in a new container
+	
+		podman run
+		
+	List images in local store
+	
+		podman images
+		
+	Print info about containers
+	
+		podman ps
+		
+	Display config of a container image, volume, network, or pod
+	
+		podman inspect
+		
+	Download an image from a registry
+	
+		podman pull
+		
+	Copy files between a container and the local OS
+	
+		podman cp
+		
+	Execute a command in a running container
+	
+		podman exec
+		
+	Remove 1+ containers
+	
+		podman rm
+	
+	Remove 1+ locally stored images
+	
+		podman rmi
+		
+	Search a registry for a image
+	
+		podman search
+
