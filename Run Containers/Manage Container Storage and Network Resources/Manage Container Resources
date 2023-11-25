@@ -1,0 +1,17 @@
+Scalability Options
+	• Enterprise solution that needs to scale
+		○  -> kubernetes
+	• small deployments on a single container host w/ no need to scale
+		○ -> just mount a directory within the container (think about a web server that will store content in /var/www/html/)
+
+Network communication with a container
+	Port mapping is required.
+	
+Next few sections
+
+	Suppose you need to:
+		○ create a containerized db based on MariaDB
+		○ configure port mapping and host firewall to allow traffic on 3306/tcp
+		○ configure the db for persistent storage with the correct selinux context
+		○ add appropriate network config so client01 host can reach the db via DNS
+

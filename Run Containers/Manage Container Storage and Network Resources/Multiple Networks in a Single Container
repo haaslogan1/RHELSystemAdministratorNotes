@@ -1,0 +1,9 @@
+View all the Podman Networks
+
+	podman network ls
+	
+Connect a Network to a Container
+
+	podman network connect networkName containerName
+	
+

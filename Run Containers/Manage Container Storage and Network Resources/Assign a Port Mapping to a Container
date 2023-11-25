@@ -1,0 +1,11 @@
+How do I map a port from my local machine to the container?
+	With the -p option when running!
+	
+	podman run -p <host_port>:<container_port>
+	
+How do I check port mappings for a specific container or all containers?
+
+	podman port -a
+	podman port containerID
+	
+

@@ -1,0 +1,41 @@
+All container data is lost when removing a container(ephemeral nature). How can I persist this data?
+	
+	With the -v (or --volume) option when running the container.
+	
+File Permissions
+	
+	Example: mariaDB
+		mariaDB requires that the mysql uid and gid owns this directory: /usr/lib/mysql
+		
+		In this case, root is not the uid or gid. So, make sure the mounted FS has that UID and GID owning that directory.
+		
+Checking file permission
+
+	podman unshare /path/to/file
+	
+	The output will show:
+		first line: root user of container (0) maps to this UID and GUID on the local machine
+		second line: the container user owning the file  (1) maps to this UID and GUID on the local machine
+		
+Check the db01 container for the UID and GID of the mysql user
+
+	podman exec db01 sh -c 'grep mysql /etc/passwd'
+	
+		-> find that uid 27 is the mysql user
+	
+Make a directory to mount in the container (owned by the mysql user)
+	
+	mkdir ~/db_data
+	podman unshare chown 27:27 ~/db_data
+	
+Correct file perms are set. So, run the container with '-v' to mount a FS
+	podman run -d --name db01 \
+	-e MYSQLUSER = \
+	...\
+	-v ~/db_data:/var/lib/mysql:Z\
+	registry.lab.example.com/rhel8/mariadb-105
+	
+	
+		This only works because ':Z' automatically sets the container_file_t context for the container.
+		
+

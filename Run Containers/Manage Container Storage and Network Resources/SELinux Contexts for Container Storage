@@ -1,0 +1,10 @@
+Why would a container need a SELinux context?
+	If you mount a directory on the container from the local machine, the container needs an SELinux context just like other processes.
+	
+	In that case, it needs:
+		container_file_t
+		
+	You can do this while mounting via:
+		podman run --volume /path/to/file:/container/path:Z
+		
+

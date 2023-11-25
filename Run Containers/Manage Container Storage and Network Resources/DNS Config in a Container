@@ -1,0 +1,28 @@
+Default
+	
+	By default, containers are not DNS-enabled.
+	
+Create a DNS-enabled Network
+
+	podman network create --gateway <ip> --subnet <ip>/<length> db_net
+	
+Verify the newly created DNS-enabled Network 'db_net'
+
+	podman network inspect db_net
+
+Run a container on the network
+
+	podman run ... --network db_net
+	
+Testing with ping and ip commands
+	
+	Containers have minimal packages. So, they probably don't have these commands. Install like this:
+		podman exec containerId sh -c 'dnf install -y iputils iproute'
+		
+	Then, of course, test:
+		podman exec containerID sh -c 'ping c3 containerName'
+		
+	Use 'ip a' to test that the IP address was set correctly:
+		podman exec containerID sh -c 'ip a'
+		
+
