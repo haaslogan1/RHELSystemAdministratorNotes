@@ -1,0 +1,12 @@
+Now, I can start the system service. Will it persist a user logging in?
+
+	No. User services stop when inactive.
+	
+How do I make the user service start with the server and stop at shutdown?
+	
+	With this command:
+		loginctl enable-linger
+		
+	Verify Liner=yes:
+		loginctl show-user currentUser
+

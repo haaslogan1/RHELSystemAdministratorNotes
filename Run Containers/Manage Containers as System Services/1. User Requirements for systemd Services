@@ -1,0 +1,16 @@
+Two types of services
+
+	1. System services start at system boot and stop at shutdown
+	2. Regular services can be ran via systemctl. They start when you tell them to (systemctl). Then, they start and stop depending on activity (stopping when inactive and re-starting when invoked)
+
+User Creation
+
+	When you create a user (useradd), the system reserves a range of IDs for the user in the /etc/subuid file.
+	
+		If you use the --system option, this will not happen bceause it is a sys account.
+		
+		Hence, system accounts cannot run rootless containers.
+		
+Important: podman reduires a full session. You cannot run podman via a 'su' or 'sudo' session.
+
+

@@ -1,0 +1,13 @@
+Run the service created in (2)
+
+	systemctl --user daemon-reload
+	systemctl --user start container1-webserver1.service
+	systemctl --user status container1-webserver1.service
+		running!
+		
+	Why are we throwing --user in there?
+		Specifying that it is a user service!
+		
+		System service files are stored in /etc/systemd/system/*
+	
+

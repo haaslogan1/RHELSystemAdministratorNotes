@@ -1,0 +1,9 @@
+Basically the same as (4). Except:
+	• no need to:
+		○ create a dedicated user
+		○ add the --user option to systemctl
+	• just use /etc/systemd/system/*
+	• no need to run 'loginctl enable-linger'
+	
+	
+

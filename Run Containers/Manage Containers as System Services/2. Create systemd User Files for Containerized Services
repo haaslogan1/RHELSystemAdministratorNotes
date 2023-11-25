@@ -1,0 +1,22 @@
+System Services file
+
+	~/.config/systemd/user/
+	
+Generate systemd service for an existing container
+	
+	podman generate systemd ..
+	
+Generate systemd service and a new container (which will be removed when inactive)
+
+	podman generate systemd --new ...
+	
+Generate a service file to use later on
+	
+	podman generate systemd --new --file ...
+	
+
+	In this example, we use the output (container-name.service) in the ~/.config/systemd/user/ directory
+		mkdir -p /.config/systemd/user
+		mv container-name.service /.config/systemd/user/
+		
+
