@@ -1,4 +1,4 @@
-Now, I can start the system service. Will it persist a user logging in?
+ Now, I can start the system service. Will it persist a user logging in?
 
 	No. User services stop when inactive.
 	

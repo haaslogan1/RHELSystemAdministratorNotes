@@ -1,0 +1,20 @@
+1. Check to ensure that the root filesystem is mounted with rw access
+	
+	Check by running mount
+	
+	If it only has ro access, run:
+		mount -o remount,rw /
+		
+2. Try to mount all file systems (it will display an error for the problematics FSs)
+
+	mount --all
+	
+3. After correcting the issue, inform the systemd daemon to reload the /etc/fstab file:
+
+	systemctl daemon-reload
+	mount --all
+	
+	
+4. If this works, continue with the reboot:
+
+	systemctl reboot

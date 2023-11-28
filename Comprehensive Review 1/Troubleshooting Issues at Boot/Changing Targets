@@ -1,0 +1,30 @@
+Runtime: Select a target
+
+	You can isolate any target that allows isolation:
+		systemctl isolate example.target
+		
+	You can check for 'AllowIsolate=yes' by running:
+		systemctl cat example.target
+		
+Set Default Target
+
+	systemctl set-default example.target
+	
+Get Default Target
+
+	systemctl get-default
+	
+Set a Different Target when booting
+
+	You need to set the 'systemd.unit=example.target' kernel command line option.
+	
+	Here's how:
+		1. Boot the system.
+		2. Interrupt the boot loader menu countdown by pressing any key except Enter.
+		3. Move the cursor to the kernel entry to start.
+		4. Press e to edit the current entry.
+		5. Move the cursor to the line that starts with linux which is the kernel command line.
+		6. Append systemd.unit=target.target, for example, systemd.unit=emergency.target.
+		7. Press Ctrl+x to boot with these changes.
+	
+

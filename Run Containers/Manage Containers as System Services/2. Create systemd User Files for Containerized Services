@@ -12,11 +12,10 @@ Generate systemd service and a new container (which will be removed when inactiv
 	
 Generate a service file to use later on
 	
-	podman generate systemd --new --file ...
+	podman generate systemd --new --files ...
 	
 
 	In this example, we use the output (container-name.service) in the ~/.config/systemd/user/ directory
 		mkdir -p /.config/systemd/user
-		mv container-name.service /.config/systemd/user/
-		
+		mv container-name.service /.config/systemd/user/	
 

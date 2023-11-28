@@ -1,0 +1,20 @@
+crontab -e invokes the vim editor or whatever else is set as the ENVIRONMENT variable
+
+	Fields in crontab appear in the following order:
+			§ Minutes
+			§ Hours
+			§ Day
+			§ Month
+			§ Day of week
+			§ Command
+
+	
+	Example: Email "chime" to the job owner every 5 mins between 9:00-16:55 on a Friday in July
+		*/5 9-16 * Jul 5 echo "chime"
+	
+	
+	
+	
+crontab -l
+
+	Show the crontab file for your user!

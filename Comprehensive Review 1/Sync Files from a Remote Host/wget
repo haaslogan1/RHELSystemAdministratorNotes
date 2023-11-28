@@ -1,0 +1,7 @@
+Pull a file directly from the internet
+
+	Example
+	wget http://materials.example.com/labs/backup-home.sh
+
+Alternatively, run curl and pipe the STDOUT to a file 
+	curl http://materials.example.com/labs/backup-home.sh > ~/backup-home.sh

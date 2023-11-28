@@ -1,0 +1,6 @@
+Synchronize machines to have the same files (recursively) in a given directory
+
+	WebSphere Example - Horrible idea: normally, you can't sync the properties directory. Now, you can:
+	
+		rsync uid@host:/opt/IBM/WebSphere905/AppServer/profiles/DMGR/properties/ /opt/IBM/WebSphere905/AppServer/profiles/custom01/properties/
+
