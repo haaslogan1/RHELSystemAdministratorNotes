@@ -1,0 +1,15 @@
+In this example, we are using dev/vdc/
+
+	1. Use the interactive tool: parted /dev/vdc
+
+	mklabel msdos
+	
+	mkpart
+		
+		type = primary
+		
+		fs = linux-swap
+	
+	print
+
+

@@ -1,0 +1,7 @@
+In: 
+	/etc/tmpfiles.d/*.conf
+	/usr/lib/tmpfiles.d/*.conf
+	/run/tmpfiles.d/*.conf
+	
+Example line:
+	d /run/volatile 0700 root root 30s

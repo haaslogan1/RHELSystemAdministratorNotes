@@ -1,0 +1,4 @@
+	1. vim /etc/fstab
+		
+		/dev/myVG/myLV /mnt xfs defaults 0 0
+

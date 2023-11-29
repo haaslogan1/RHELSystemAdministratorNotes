@@ -1,0 +1,8 @@
+	1. Check for newly created partition
+		
+		lsblk
+		
+	2. Create phyical volume
+
+		pvcreate /dev/vdb1
+

@@ -1,0 +1,3 @@
+mkfs -t TYPE /dev/VG/LV
+
+

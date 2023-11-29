@@ -1,0 +1,2 @@
+vim /etc/fstab
+UUID=... swap swap defaults 0 0

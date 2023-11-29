@@ -1,0 +1,4 @@
+lsblk
+	Check for a disk with enough space (for example, /dev/vdb)
+	
+

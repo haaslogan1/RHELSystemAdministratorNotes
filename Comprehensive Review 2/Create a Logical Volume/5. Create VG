@@ -1,0 +1,12 @@
+	1. Check for partition name
+	
+		lsblk
+		
+		In this example, I will use '/dev/vdb1'
+
+	2. Create VG
+
+		vgcreate name /dev/vdb1
+		
+		
+

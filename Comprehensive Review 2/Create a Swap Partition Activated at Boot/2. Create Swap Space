@@ -1,0 +1,7 @@
+	1. Check devices for the LV
+	
+	lsblk
+	
+	2. Make the swap from the dev partition
+
+	mkswap /dev/vdc1

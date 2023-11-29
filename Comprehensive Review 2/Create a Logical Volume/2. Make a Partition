@@ -1,0 +1,19 @@
+Use the interactive tool!
+
+	parted /dev/vdb
+	
+In the interactive tool:
+	1. Make a partition label
+		mklabel gpt
+		
+	2. Make the partition
+		mkpart 
+		
+	3. Enable the lvm
+		
+		print
+		
+		
+		set (number) lvm on
+		
+
