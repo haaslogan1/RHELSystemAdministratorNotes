@@ -1,0 +1,4 @@
+Step 2 points to this file
+sudo vim /etc/auto.demo
+	# Mount the /share/work directory (inheriting froms tep 2), with r+w+sync options, using the directory from the example_server machine.
+	wwork -rw,sync example_server:/my/home/

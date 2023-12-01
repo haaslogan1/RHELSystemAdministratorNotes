@@ -1,0 +1,4 @@
+Opening a port to act as a web server:
+	semanage port -a -t http_port_t -p tcp PORT
+	
+systemctl restart httpd

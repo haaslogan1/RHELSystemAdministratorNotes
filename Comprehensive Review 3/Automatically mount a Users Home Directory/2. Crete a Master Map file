@@ -1,0 +1,4 @@
+sudo vim /etc/auto.master.d/demo.autofs
+	# /shares is the base directory for automounts
+	# /etc/auto.demo contains mount details
+		/shares /etc/auto.demo

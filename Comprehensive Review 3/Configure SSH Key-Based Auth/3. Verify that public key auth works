@@ -1,0 +1,2 @@
+Try to ssh with only pub key auth:
+	ssh -o pubkeyauthentication=yes -o passwordauthentication=no user@server

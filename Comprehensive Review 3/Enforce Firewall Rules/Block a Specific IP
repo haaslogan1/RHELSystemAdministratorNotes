@@ -1,0 +1,6 @@
+Block all traffic from a specific IP
+	firewall-cmd --add-source=IP/32 --zone=block --permanent
+	
+	firewall-cmd --reload
+	
+

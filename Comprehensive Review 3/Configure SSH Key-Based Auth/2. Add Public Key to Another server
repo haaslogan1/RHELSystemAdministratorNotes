@@ -1,0 +1,4 @@
+Copy your pub key for your user acct:
+	ssh-copy-id server_name
+	
+	You can specify a specific key with -i

@@ -1,0 +1,3 @@
+Example 1: Allow NFS home directories
+	setsebool --P use_nfs_home_dirs true
+

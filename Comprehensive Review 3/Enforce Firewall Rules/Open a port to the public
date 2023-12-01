@@ -1,0 +1,2 @@
+Change the zone to public
+firewall-cmd --permanent --zone=public --add--port=<port>/<tcp?>

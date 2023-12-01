@@ -1,0 +1,10 @@
+Check that SELinux is being enforced:
+	getenforce
+	
+Set permissive mode:
+	setenforce permissive
+	
+Manually change (requires reboot):
+	vim /etc/sysconfig/selinux
+	
+
