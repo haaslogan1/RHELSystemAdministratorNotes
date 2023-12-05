@@ -1,0 +1,5 @@
+mkdir -p ~/.config/containers
+
+vim ~/.config/containers/registries.conf
+
+

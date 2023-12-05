@@ -1,0 +1,4 @@
+This error: Failed to connect to bus: No medium found
+
+	Ensure that the user is make a full connection (not su -)
+

@@ -1,0 +1,7 @@
+Authenticate!
+
+	podman login
+
+Build the image with the containerfile
+
+	podman build -t NAME:TAG DIR	

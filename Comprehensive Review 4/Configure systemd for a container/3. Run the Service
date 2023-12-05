@@ -1,0 +1,7 @@
+systemctl --user daemon-reload
+systemctl --user enable --now container-name
+systemctl --user status container-name
+
+Important: make the user service start at system boot!
+
+	loginctl enable-linger

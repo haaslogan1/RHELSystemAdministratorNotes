@@ -1,0 +1,11 @@
+Inspect the image and pick a tag:
+	skopeo inspect docker://...
+
+Run the container:
+	podman run -d --network  NETWORK \
+		-e OPTION
+		-p localPort:containerPort
+		-v localDir:containerDir
+		--name NAME
+	
+

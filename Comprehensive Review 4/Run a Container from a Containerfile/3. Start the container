@@ -1,0 +1,3 @@
+podman start CONTAINER_ID
+
+	Use CONTAINER_ID created in step 3

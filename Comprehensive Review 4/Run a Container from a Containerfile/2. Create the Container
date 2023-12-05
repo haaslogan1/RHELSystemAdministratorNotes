@@ -1,0 +1,6 @@
+podman create --name NAME -p PORT_MAPPING --network NETWORK_NAME IMAGE_ID
+
+	Get the image id by running:
+		podman images
+		
+

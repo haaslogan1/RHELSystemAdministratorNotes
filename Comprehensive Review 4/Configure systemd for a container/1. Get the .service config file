@@ -1,0 +1,2 @@
+podman generate systemd <running container>
+
