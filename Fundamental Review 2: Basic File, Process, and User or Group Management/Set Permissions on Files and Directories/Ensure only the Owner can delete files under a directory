@@ -1,0 +1,3 @@
+Sticky bit!
+	
+	chmod o+t /directory/

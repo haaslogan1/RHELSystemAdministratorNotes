@@ -1,0 +1,4 @@
+Use the top command!
+
+Then, if you can, kill the process:
+kill -9 PID

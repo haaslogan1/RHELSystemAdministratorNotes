@@ -1,0 +1,2 @@
+Apply the setGID bit on the directory:
+chmod g+s /directory/

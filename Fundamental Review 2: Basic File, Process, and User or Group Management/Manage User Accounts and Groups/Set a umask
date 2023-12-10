@@ -1,0 +1,4 @@
+Default
+	umask 007 user
+	
+

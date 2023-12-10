@@ -1,0 +1,9 @@
+Modify this file: 
+
+	/etc/sudoers.d/USER
+
+Content for a root equivalent super user:
+	
+	user ALL=(ALL) ALL
+	
+
