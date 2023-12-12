@@ -1,0 +1,1 @@
+sudo nmli con add con-name static ipv4.addresses <IPv4 Address>/<Subnet> ipv4.gateway <IPv4 gateway> ipv4.dns <IP of DNS> type ethernet ifname <device name> ipv4.method manual

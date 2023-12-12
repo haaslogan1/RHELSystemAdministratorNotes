@@ -1,0 +1,8 @@
+nmcli con mod <UUID shown from nmcli con show> +ipv4.addresses <IPv4 Address>
+
+nmcli con up static
+
+
+Check that the connection works via the ping command!
+
+

@@ -1,0 +1,7 @@
+Modify the /etc/hosts file
+
+Append:
+	<IP addr> <canonical hostname>
+
+Test with ping!!
+
