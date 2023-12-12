@@ -1,0 +1,7 @@
+ssh-copy-id -i <pub file> <student>@<servername>
+
+
+Test:
+	ssh -i <private key file> <uid>@<remote host>
+	
+

@@ -1,0 +1,10 @@
+Edit the correct ssh daemon config file:
+	/etc/ssh/sshd_config
+	
+Set the following:
+	PermitRootLogin no
+	
+	
+Reload the service:
+	sudo systemctl reload ssh.service
+

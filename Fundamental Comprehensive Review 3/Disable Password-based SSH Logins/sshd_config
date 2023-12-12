@@ -1,0 +1,10 @@
+Edit the correct ssh daemon config file:
+	/etc/ssh/sshd_config
+	
+	
+Set the following:
+	PasswordAuthentication no
+	
+Reload the service:
+	sudo systemctl reload sshd.service
+
